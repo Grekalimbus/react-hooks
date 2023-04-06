@@ -1,8 +1,9 @@
 import React from 'react';
+import UseMemo from './examples/UseMemo';
 import UseRef from './examples/UseRef';
 
 function App() {
-  return <UseRef />;
+  return <UseMemo />;
 }
 
 export default App;
