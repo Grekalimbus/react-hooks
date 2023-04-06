@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
+import UseRef from './examples/UseRef';
 
 function App() {
-  return <div>App</div>;
+  return <UseRef />;
 }
 
 export default App;
