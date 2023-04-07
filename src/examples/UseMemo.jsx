@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo } from 'react';
 
 function complexeComputed(num) {
   console.log('complexeComputed');
@@ -7,8 +7,12 @@ function complexeComputed(num) {
   return num * 2;
 }
 
+//1. Если переменную с вызовом complexeComputed(number) не обернуть в useMemo, при каждом рендере будет происходить сложное вычисление, которое тормозит приложение. Также можно увидеть в консоли, что даже когда мы используем клик по button, который не связан с computed, он меняет состояние number и рендерит страницу, после чего функция снова делает вычисление и выводит в консоль "complexeComputed".
+//2. Если мы оборачиваем функцию в useMemo и указываем зависимость, функция не будет вызываться при каждом рендере а будет вызываться лишь тогда, когда изменилось значение зависимости в массиве useMemo.
+
 const UseMemo = () => {
   const [number, setNumber] = useState(42);
+  // const computed = complexeComputed(number);
   const computed = useMemo(() => {
     return complexeComputed(number);
   }, [number]);

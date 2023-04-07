@@ -1,9 +1,16 @@
 import React from 'react';
-import UseMemo from './examples/UseMemo';
-import UseRef from './examples/UseRef';
+import UseCallback from './examples/UseCallback';
+// import UseMemo from './examples/UseMemo';
+// import UseRef from './examples/UseRef';
 
 function App() {
-  return <UseMemo />;
+  return (
+    <div>
+      {/* <UseRef></UseRef> */}
+      {/* <UseMemo></UseMemo> */}
+      <UseCallback></UseCallback>
+    </div>
+  );
 }
 
 export default App;
